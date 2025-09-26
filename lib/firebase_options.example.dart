@@ -53,10 +53,10 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD4jhPAwS6_lNZEMbKt_xNAuG6r5htvtvA',
-    appId: '1:976318685209:android:d4a7a186c5635495474a88',
-    messagingSenderId: '976318685209',
-    projectId: 'songify22',
-    storageBucket: 'songify22.firebasestorage.app',
+    apiKey: 'YOUR_API_KEY',
+    appId: 'YOUR_APP_ID',
+    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+    projectId: 'YOUR_PROJECT_ID',
+    storageBucket: 'YOUR_STORAGE_BUCKET',
   );
 }
