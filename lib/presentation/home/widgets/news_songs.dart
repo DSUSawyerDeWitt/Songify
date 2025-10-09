@@ -15,10 +15,10 @@ class NewsSongs extends StatelessWidget {
         height: 200,
         child: BlocBuilder<NewsSongsCubit, NewsSongsState>(
           builder: (context, state){
-            if (state is NewsSongsLoaded) {
+            if (state is NewsSongsLoading) {
               return Container(
                 alignment: Alignment.center,
-                child: CircularProgressIndicator()
+                child: const CircularProgressIndicator()
               );
             }
             if (state is NewsSongsLoaded) {
@@ -33,30 +33,32 @@ class NewsSongs extends StatelessWidget {
     );
   }
 
-
   Widget _songs(List<SongEntity> songs){
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       shrinkWrap: true,
       itemBuilder: (context, index) {
+        final imageUrl = songs[index].coverImageUrl;
         return SizedBox(
           width: 160,
           child: Column(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(
-                      
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(imageUrl)
                     )
-                  )
+                  ),
                 ),
               )
             ],
-          ),
+          )
         );
       },
-      separatorBuilder: (context, index) => SizedBox(width: 14), 
+      separatorBuilder: (context, index) => const SizedBox(width: 14), 
       itemCount: songs.length,
     );
   }

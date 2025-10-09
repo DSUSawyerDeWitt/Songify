@@ -6,7 +6,7 @@ import '../../../service_locator.dart';
 
 class NewsSongsCubit extends Cubit<NewsSongsState> {
 
-  NewsSongsCubit() : super(NewsSongsLoading());
+  NewsSongsCubit() : super(NewsSongsLoading()); //Cubit inital state set the Loading
 
   Future<void> getNewsSongs() async {
     var returnedSongs = await sl<GetNewsSongsUseCase>().call();
@@ -17,7 +17,7 @@ class NewsSongsCubit extends Cubit<NewsSongsState> {
       },
       (data) {
         emit(NewsSongsLoaded(songs:data));
-      },
+      }
     );
   }
 }
