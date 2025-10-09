@@ -4,6 +4,7 @@ import 'package:songify/data/sources/auth/auth_firebase_service.dart';
 import 'package:songify/domain/repository/auth/auth.dart';
 import 'package:songify/domain/usecases/auth/signup_usecase.dart';
 import 'package:songify/domain/usecases/song/get_news_songs.dart';
+import 'package:songify/domain/usecases/song/get_play_list.dart';
 
 import 'data/repository/song/song_repository_impl.dart';
 import 'data/sources/songs/song_firebase_service.dart';
@@ -41,4 +42,8 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<GetNewsSongsUseCase>(
     GetNewsSongsUseCase(sl<SongsRepository>())
   );
+
+  sl.registerSingleton<GetPlayListUseCase>(
+    GetPlayListUseCase(sl<SongsRepository>())
+  ); 
 }

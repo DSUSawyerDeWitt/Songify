@@ -6,6 +6,7 @@ import 'package:songify/core/configs/assets/app_images.dart';
 import 'package:songify/core/configs/assets/app_vectors.dart';
 import 'package:songify/core/configs/theme/app_colors.dart';
 import 'package:songify/presentation/home/widgets/news_songs.dart';
+import 'package:songify/presentation/home/widgets/play_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -42,17 +43,18 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             _homeTopCard(),
             _tabs(),
             SizedBox(
-              height: 260, //Height of the Widgets
+              height: 210, //Height of the Widgets
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  const NewsSongs(),
-                  Container(),
-                  Container(),
-                  Container(),
+                  const NewsSongs(), //News
+                  Container(),       //Future Videos
+                  Container(),       //Future Artist
+                  Container(),       //Future Podcasts
                 ],
               ),
-            )
+            ),
+            const PlayList()
           ],
         )
       )

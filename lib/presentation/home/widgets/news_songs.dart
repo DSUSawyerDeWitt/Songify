@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:songify/common/helpers/is_dark_mode.dart';
+import 'package:songify/core/configs/theme/app_colors.dart';
 import 'package:songify/domain/entities/song/song_entity.dart';
 import 'package:songify/presentation/home/bloc/news_songs_cubit.dart';
 import 'package:songify/presentation/home/bloc/news_songs_state.dart';
@@ -51,6 +53,22 @@ class NewsSongs extends StatelessWidget {
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(imageUrl)
+                    )
+                  ),
+                  child: Align(
+                    alignment: Alignment.bottomRight,
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      transform: Matrix4.translationValues(10, 10, 0),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: context.isDarkMode ? AppColors.darkGrey: Color(0xffE6E6E6)
+                      ),
+                      child: Icon(
+                        Icons.play_arrow_rounded,
+                        color: context.isDarkMode ? AppColors.grey: Color(0xff555555)
+                      )
                     )
                   ),
                 ),

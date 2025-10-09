@@ -13,4 +13,9 @@ class SongRepositoryImpl extends SongsRepository {
   Future<Either> getNewSongs() async {
     return await service.getNewsSongs();
   }
+  
+  @override
+  Future<Either> getPlayList() async {
+    return await service.getPlayList();
+  }
 }
