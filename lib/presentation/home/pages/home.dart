@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             _homeTopCard(),
             _tabs(),
             SizedBox(
-              height: 260,
+              height: 260, //Height of the Widgets
               child: TabBarView(
                 controller: _tabController,
                 children: [
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   Widget _homeTopCard(){
     return Center(
       child: SizedBox(
-        height: 160,
+        height: 155,
         child: Stack(
           children: [
             Align(
@@ -73,12 +73,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  right: 5
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                  right: 15
                 ),
                 child: Image.asset(
-                  AppImages.homeArtist
+                  AppImages.homeArtist,
                 ),
               ),
             ),

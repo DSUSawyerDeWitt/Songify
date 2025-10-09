@@ -42,6 +42,7 @@ class NewsSongs extends StatelessWidget {
         return SizedBox(
           width: 160,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: Container(
@@ -53,7 +54,23 @@ class NewsSongs extends StatelessWidget {
                     )
                   ),
                 ),
-              )
+              ),
+              SizedBox(height: 10),
+              Text(
+                songs[index].title,
+                style:TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                )
+              ),
+              SizedBox(height: 0),
+              Text(
+                songs[index].artist,
+                style:TextStyle(
+                  fontSize: 12,
+                )
+              ),
+              //SizedBox(height: 30),
             ],
           )
         );
