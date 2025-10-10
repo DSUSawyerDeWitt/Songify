@@ -5,6 +5,7 @@ import 'package:songify/core/configs/theme/app_colors.dart';
 import 'package:songify/domain/entities/song/song_entity.dart';
 import 'package:songify/presentation/home/bloc/news_songs_cubit.dart';
 import 'package:songify/presentation/home/bloc/news_songs_state.dart';
+import 'package:songify/presentation/song_player/pages/song_player.dart';
 
 class NewsSongs extends StatelessWidget {
   const NewsSongs({super.key});
@@ -41,56 +42,64 @@ class NewsSongs extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (context, index) {
         final imageUrl = songs[index].coverImageUrl;
-        return SizedBox(
-          width: 160,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(imageUrl)
-                    )
-                  ),
-                  child: Align(
-                    alignment: Alignment.bottomRight,
-                    child: Container(
-                      height: 40,
-                      width: 40,
-                      transform: Matrix4.translationValues(10, 10, 0),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: context.isDarkMode ? AppColors.darkGrey: Color(0xffE6E6E6)
-                      ),
-                      child: Icon(
-                        Icons.play_arrow_rounded,
-                        color: context.isDarkMode ? AppColors.grey: Color(0xff555555)
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (BuildContext context) => SongPlayerPage(songEntity: songs[index]))
+            );
+          },
+          child: SizedBox(
+            width: 160,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(imageUrl)
                       )
-                    )
+                    ),
+                    child: Align(
+                      alignment: Alignment.bottomRight,
+                      child: Container(
+                        height: 40,
+                        width: 40,
+                        transform: Matrix4.translationValues(10, 10, 0),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: context.isDarkMode ? AppColors.darkGrey: Color(0xffE6E6E6)
+                        ),
+                        child: Icon(
+                          Icons.play_arrow_rounded,
+                          color: context.isDarkMode ? AppColors.grey: Color(0xff555555)
+                        )
+                      )
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                songs[index].title,
-                style:TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                )
-              ),
-              SizedBox(height: 0),
-              Text(
-                songs[index].artist,
-                style:TextStyle(
-                  fontSize: 12,
-                )
-              ),
-              //SizedBox(height: 30),
-            ],
-          )
+                SizedBox(height: 10),
+                Text(
+                  songs[index].title,
+                  style:TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                  )
+                ),
+                SizedBox(height: 0),
+                Text(
+                  songs[index].artist,
+                  style:TextStyle(
+                    fontSize: 12,
+                  )
+                ),
+                //SizedBox(height: 30),
+              ],
+            )
+          ),
         );
       },
       separatorBuilder: (context, index) => const SizedBox(width: 14), 
