@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:songify/common/helpers/is_dark_mode.dart';
+import 'package:songify/common/widgets/favorite_button/favorite_button.dart';
 import 'package:songify/core/configs/theme/app_colors.dart';
 import 'package:songify/domain/entities/song/song_entity.dart';
 import 'package:songify/presentation/home/bloc/play_list_cubit.dart';
@@ -128,13 +129,7 @@ class PlayList extends StatelessWidget {
                     songs[index].duration.toString().replaceAll('.', ':')
                   ),
                   const SizedBox(width: 15),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.favorite_outline,
-                      color: AppColors.grey,
-                    ),
-                  )
+                  FavoriteButton(songEntity: songs[index])
                 ],
               )
             ],

@@ -18,4 +18,14 @@ class SongRepositoryImpl extends SongsRepository {
   Future<Either> getPlayList() async {
     return await service.getPlayList();
   }
+  
+  @override
+  Future<Either> addOrRemoveFavoriteSong(String songId) async {
+    return await service.addOrRemoveFavoriteSong(songId);
+  }
+  
+  @override
+  Future<bool> isFavoriteSong(String songId) async {
+    return await service.isFavoriteSong(songId);
+  }
 }
