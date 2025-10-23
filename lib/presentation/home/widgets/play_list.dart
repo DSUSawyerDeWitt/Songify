@@ -20,7 +20,9 @@ class PlayList extends StatelessWidget {
           if(state is PlayListLoading){
             return Container(
               alignment: Alignment.center,
-              child: const CircularProgressIndicator(),
+              child: const CircularProgressIndicator(
+                color: AppColors.primary,
+              ),
             );
           }
           if(state is PlayListLoaded){
@@ -73,6 +75,7 @@ class PlayList extends StatelessWidget {
 
   Widget _songs(List<SongEntity> songs){
     return ListView.separated(
+      physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemBuilder: (context, index){
         return GestureDetector(

@@ -19,16 +19,12 @@ class SignupOrSigninPage extends StatelessWidget {
       body: Stack(
         children: [
           const BasicAppBar(),
+          //Align(
+          //  alignment: Alignment.topRight,
+          //  child: SvgPicture.asset(AppVectors.topPattern),
+          //),
           Align(
-            alignment: Alignment.topRight,
-            child: SvgPicture.asset(AppVectors.topPattern),
-          ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: SvgPicture.asset(AppVectors.bottomPattern),
-          ),
-          Align(
-            alignment: Alignment.bottomLeft,
+            alignment: Alignment.bottomCenter,
             child: Image.asset(AppImages.authBG),
           ),
           Align(
@@ -39,10 +35,10 @@ class SignupOrSigninPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SvgPicture.asset(AppVectors.logo),
+                  SvgPicture.asset(AppVectors.logo, width: 170,),
                   const SizedBox(height: 55),
                   const Text(
-                    'Enjoy Listening To Music',
+                    'Music, Made Simple',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 26,
@@ -51,7 +47,7 @@ class SignupOrSigninPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 21),
                   const Text(
-                    'Spotify is a proprietary Swedish audio streaming and media services provider',
+                    'AWDEO is an independent platform for simple, uninterrupted listening.',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 17,

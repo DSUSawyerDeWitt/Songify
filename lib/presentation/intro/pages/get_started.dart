@@ -36,20 +36,24 @@ class GetStartedPage extends StatelessWidget {
               children: [
                 Align(
                   alignment: Alignment.topCenter,
-                  child: SvgPicture.asset(AppVectors.logo),
+                  child: SvgPicture.asset(
+                    AppVectors.logo,
+                    width: 200
+                    ),
                 ),
                 Spacer(),
                 Text(
-                  'Enjoy Listening to Music',
+                  'Pure Sound. No Static. AWDEO',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: AppColors.white,
                     fontSize: 18,
                   ),
                 ),
-                SizedBox(height: 21),
+                SizedBox(height: 18),
                 Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis enim purus sed phasellus. Cursus ornare id scelerisque aliquam.',
+                  'AWDEO is a free noncommercial audio streamer designed to let users listen to music without ads or subscriptions. '
+                  'Made for people who just want to press play and listen.',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     color: AppColors.grey,
@@ -68,6 +72,7 @@ class GetStartedPage extends StatelessWidget {
                     );
                   },
                   title: 'Get Started',
+                  fontSize: 20,
                 ),
               ],
             ),

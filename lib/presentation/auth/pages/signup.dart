@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:songify/common/widgets/appbar/app_bar.dart';
 import 'package:songify/common/widgets/button/basic_app_button.dart';
 import 'package:songify/core/configs/assets/app_vectors.dart';
+import 'package:songify/core/configs/theme/app_colors.dart';
 import 'package:songify/data/models/auth/create_user_req.dart';
 import 'package:songify/domain/usecases/auth/signup_usecase.dart';
 import 'package:songify/presentation/auth/pages/signin.dart';
@@ -126,7 +127,10 @@ class SignupPage extends StatelessWidget {
               );
             },
             child: Text(
-              'Sign In'
+              'Sign In',
+              style: TextStyle(
+                color: AppColors.primary,
+              ),
             )
           )
         ],

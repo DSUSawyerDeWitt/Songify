@@ -21,7 +21,9 @@ class NewsSongs extends StatelessWidget {
             if (state is NewsSongsLoading) {
               return Container(
                 alignment: Alignment.center,
-                child: const CircularProgressIndicator()
+                child: const CircularProgressIndicator(
+                  color: AppColors.primary,
+                ),
               );
             }
             if (state is NewsSongsLoaded) {

@@ -4,10 +4,12 @@ class BasicAppButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String title;
   final double ? height;
+  final double ? fontSize;
   const BasicAppButton({
     required this.onPressed,
     required this.title,
     this.height,
+    this.fontSize,
     super.key
   });
 
@@ -19,7 +21,10 @@ class BasicAppButton extends StatelessWidget {
         minimumSize: Size.fromHeight(height ?? 80)
       ),
        child: Text(
-        title
+        title,
+        style: TextStyle(
+          fontSize: fontSize ?? 20,
+        ),
        )
     );
   }

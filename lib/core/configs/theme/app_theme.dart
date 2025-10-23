@@ -8,6 +8,9 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.lightbackground,
     brightness: Brightness.light,
     fontFamily: 'Satoshi',
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: Colors.black
+    ),
     inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: Colors.transparent,
@@ -22,6 +25,13 @@ class AppTheme {
             color: Colors.black,
             width: 0.4
           ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: const BorderSide(
+            color: Colors.black,
+            width: 2,
+          )
         ),
       ),
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -42,6 +52,9 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.darkbackground,
     brightness: Brightness.dark,
     fontFamily: 'Satoshi',
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: Colors.white
+    ),
     inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: Colors.transparent,
@@ -56,6 +69,13 @@ class AppTheme {
             color: Colors.white,
             width: 0.4
           ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: const BorderSide(
+            color: Colors.white,
+            width: 2,
+          )
         ),
       ),
     elevatedButtonTheme: ElevatedButtonThemeData(
